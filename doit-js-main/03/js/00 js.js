@@ -1,45 +1,28 @@
-/* const number = parseInt(prompt("자연수를 입력하세요: "));
+const number = parseInt(prompt("1보다 큰 수를 입력하시오"));
 
-let isPrime;
-let remainder;
+let sum = 0;
 
-if (parseInt == "") {
-  alert("숫자를 넣으라고 임마");
-}
-
-if (number === 0 || number === 1) {
-  alert("소수도 합성수도 아닙니다.");
+if (number == null || number === 0) {
+  document.write("숫자를 입력을 안했거나 0을 입력했습니다");
 } else {
-  for (let i = 2; i < number; i++) {
-    remainder = number % i;
-    if (remainder === 0) {
-      alert(`${number}는 소수입니다`);
-      break;
-    } else {
+  for (let i = 1; i <= number; i++) {
+    if (i % 2 === 1) {
       continue;
     }
+    sum += i;
+    document.write(`${i} ----- ${sum} <br>`);
   }
-  alert(`${number}는 합성수입니다`);
 }
- */
 
-const number = parseInt(prompt("자연수를 입력하세요: "));
+/* let n = prompt("1보다 큰 숫자를 입력하세요.");
+let sum = 0;
 
-if (isNaN(number) || number <= 1) {
-  alert("숫자를 올바르게 입력하세요.");
-} else {
-  let isPrime = true;
-
-  for (let i = 2; i < number; i++) {
-    if (number % i === 0) {
-      isPrime = false;
-      break;
+if( n !== null && n > 1) {
+  for(let i = 1; i <= n ; i++) {
+    if(i % 2 == 1) {
+          continue;
     }
+    sum += i;
+    document.write(`${i} ----- ${sum} <br>`);
   }
-
-  if (isPrime) {
-    alert(`${number}는 소수입니다.`);
-  } else {
-    alert(`${number}는 합성수입니다.`);
-  }
-}
+} */
