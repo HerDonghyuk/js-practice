@@ -4,14 +4,13 @@ let isPrime;
 if (number === 1) {
   document.write(`1은 소수도 합성수도 아닙니다.`);
 } else if (number === 2) {
-  isPrime = true;   // 숫자 2는 당연히 소수이므로 true로 설정
+  isPrime = true; // 숫자 2는 당연히 소수이므로 true로 설정
 } else {
-  for (let i = 2; i < number; i++) {
+  for (let i = 2; i < number - 1; i++) {
     if (number % i === 0) {
       isPrime = false;
       break;
-    }
-    else {
+    } else {
       isPrime = true;
     }
   }
