@@ -1,15 +1,18 @@
-/* const bttn = document.querySelector("button");     // 버튼 요소 가져옴
-
-function display() {
-  alert("클릭했습니다.");
+/* let init = () => {
+  return function(a, b) {
+    return a - b > 0 ? a - b : b - a;
+  }
 }
 
-bttn.addEventListener("click", display);          // 버튼 클릭하면 display 함수 실행 */
+// console.log(`init(30, 20) : ${init(30, 20)}`);
+console.log(`init()(30, 20) : ${init()(10, 20)}`);
+ */
 
-const bttn = document.querySelector("button");
+let init = () => {
+  return function (a, b) {
+    return a - b > 0 ? a - b : b - a;
+  };
+};
 
-function display() {
-  alert("클릭했습니다");
-}
-
-bttn.addEventListener("click", display);
+console.log(`init(30, 20) : ${init(30, 20)}`);
+console.log(`init()(30, 20) : ${init()(30, 20)}`);
