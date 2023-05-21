@@ -1,18 +1,13 @@
-/* let init = () => {
-  return function(a, b) {
-    return a - b > 0 ? a - b : b - a;
+const num1 = parseInt(prompt("숫자1 입력: "));
+const num2 = parseInt(prompt("숫자2 입력: "));
+let maxDivisor;
+
+for (let i = 1; i <= num2; i++) {
+  if (num1 % i === 0) {
+    if (num2 % i === 0) {
+      maxDivisor = i;
+    }
   }
 }
 
-// console.log(`init(30, 20) : ${init(30, 20)}`);
-console.log(`init()(30, 20) : ${init()(10, 20)}`);
- */
-
-let init = () => {
-  return function (a, b) {
-    return a - b > 0 ? a - b : b - a;
-  };
-};
-
-console.log(`init(30, 20) : ${init(30, 20)}`);
-console.log(`init()(30, 20) : ${init()(30, 20)}`);
+alert(maxDivisor);
