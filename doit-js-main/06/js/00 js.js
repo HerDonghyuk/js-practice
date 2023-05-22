@@ -1,12 +1,25 @@
-/* const box = document.querySelector("#box");
+const container = document.querySelector("#container");
 
-box.addEventListener("click", (e) => {
-  alert(`이벤트 발생 위치 : ${e.pageX}, ${e.pageY}`);
-});
- */
+const pics = ["pic-1.jpg", "pic-2.jpg", "pic-3.jpg", "pic-4.jpg", "pic-5.jpg"];
 
-const box = document.querySelector("#box");
+container.style.backgroundImage = `url(images/${pics[0]})`;
 
-box.addEventListener("mousemove", (e) => {
-  alert(`이벤트 발생 위치 : ${e.pageX}, ${e.pageY}`);
+const arrows = document.querySelectorAll(".arrow");
+let i = 0;
+
+arrows.forEach((arrow) => {
+  arrow.addEventListener("click", (e) => {
+    if (e.target.id === "left") {
+      i--;
+      if (i < 0) {
+        i = pics.length - 1;
+      }
+    } else if (e.target.id === "right") {
+      i++;
+      if (i >= pics.length) {
+        i = 0;
+      }
+    }
+    container.style.backgroundImage = `url(images/${pics[i]})`;
+  });
 });
