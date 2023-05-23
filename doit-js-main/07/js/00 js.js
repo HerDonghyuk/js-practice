@@ -1,45 +1,28 @@
-/* const username = document.querySelector("#username");
-const major = document.querySelector("#major");
-const bttn = document.querySelector("form > button");
+const bttn = document.querySelector("#bttn");
+const notiBox = document.querySelector("#noti-box");
 
-bttn.addEventListener("click", (e) => {
-  e.preventDefault();
-  let tbody = document.querySelector("#attendant > tbody");
-  let newTr = document.createElement("tr");  
+bttn.addEventListener("click", function () {
+  const alarm = document.createElement("div");
+  alarm.classList.add("noti");
+  alarm.innerText = "알림 내용을 표시합니다";
+  notiBox.appendChild(alarm);
 
-  let nameTd = document.createElement("td");
-  nameTd.innerText = username.value;
-  username.value = "";
-  
-  let majorTd = document.createElement("td");  
-  majorTd.innerText = major.value;  
-  major.value = "";
-
-  newTr.appendChild(nameTd);
-  newTr.appendChild(majorTd);
-
-  tbody.appendChild(newTr);
-}); */
-
-const username = document.querySelector("#username");
-const major = document.querySelector("#major");
-const bttn = document.querySelector("form > button");
-
-bttn.addEventListener("click", (e) => {
-  e.preventDefault();
-  let tbody = document.querySelector("#attendant > tbody");
-  let newTr = document.createElement("tr");
-
-  let nameTd = document.createElement("td");
-  nameTd.innerText = username.value;
-  username.value = "";
-
-  let majorTd = document.createElement("td");
-  majorTd.innerText = major.value;
-  major.value = "";
-
-  newTr.appendChild(nameTd);
-  newTr.appendChild(majorTd);
-
-  tbody.appendChild(newTr);
+  setTimeout(() => {
+    notiBox.remove();
+  }, 1000);
 });
+
+/* const bttn = document.querySelector('#bttn');
+const notiBox = document.querySelector('#noti-box');
+
+bttn.addEventListener('click', () => {
+  const noti = document.createElement('div');
+  noti.classList.add('noti');
+  noti.innerText = "알림 내용이 표시됩니다.";
+  notiBox.appendChild(noti);
+
+  setTimeout(() => {
+    noti.remove();
+  }, 3000);
+});
+ */
