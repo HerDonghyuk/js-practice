@@ -1,8 +1,35 @@
-function changeBg() {
-  const bgCount = 5;
+/* const raffle = document.querySelector("#raffle");
 
-  let randomNumber = Math.floor(Math.random() * bgCount) + 1;
-  document.body.style.backgroundImage = `url(images/bg-${randomNumber}.jpg)`;
-}
+raffle.addEventListener("click", (e) => {
+  e.preventDefault();  
+  const seed = document.querySelector("#seed");
+  const total = document.querySelector("#total");
+  const result = document.querySelector("#result");
+  let  winner = "";
 
-document.addEventListener("load", changeBg());
+  for(let i = 0; i < total.value; i++) {
+    let picked = Math.floor((Math.random() * seed.value) + 1);
+    winner += `${picked}번, `;      
+  }  
+  
+  result.innerText = `당첨자 : ${winner}`;
+  result.classList.add("show");
+}); */
+
+const raffle = document.querySelector("#raffle");
+
+raffle.addEventListener("click", (e) => {
+  e.preventDefault();
+  const seed = document.querySelector("#seed");
+  const total = document.querySelector("#total");
+  const result = document.querySelector("#result");
+  let winner = "";
+
+  for (let i = 0; i < total.value; i++) {
+    let picked = Math.floor(Math.random() * seed.value + 1);
+    winner += `${picked}번, `;
+
+    result.innerText = `당첨자 : ${winner}`;
+    result.classList.add("show");
+  }
+});

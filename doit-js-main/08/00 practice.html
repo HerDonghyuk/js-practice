@@ -2,28 +2,20 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>랜덤 배경 이미지</title>
-    <link rel="stylesheet" href="css/main.css" />
-    <style>
-      body {
-        background-image: url("images/bg-1.jpg");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-attachment: fixed;
-        background-size: cover;
-      }
-      h1 {
-        padding: 20px 30px;
-        background-color: rgba(255, 255, 255, 0.6);
-        border-radius: 10px;
-        box-shadow: 1px 2px 2px #222;
-      }
-    </style>
+    <title>당첨자 발표</title>
+    <link rel="stylesheet" href="css/solution-2.css" />
   </head>
   <body>
-    <h1>문서를 다시 불러오세요.</h1>
-    <script src="js/00 js.js"></script>
+    <div id="container">
+      <h1>당첨자 발표</h1>
+      <form>
+        <label>전체 <input type="text" id="seed" />명 중에서</label>
+        <label><input type="text" id="total" />명 뽑기</label>
+        <button type="submit" id="raffle">추첨</button>
+        <button type="reset" id="clear">지우기</button>
+      </form>
+      <div id="result"></div>
+      <script src="js/00 js.js"></script>
+    </div>
   </body>
 </html>
