@@ -1,40 +1,26 @@
-/* function Cylinder(cylinderDiameter, cylinderHeight) {
-  this.diameter = cylinderDiameter;
-  this.height = cylinderHeight;
-
-  this.getVolume = function () {
-    let radius = this.diameter / 2;
-    return (Math.PI * radius * radius * this.height).toFixed(2);
-  };
-} */
-
-class Cylinder {
-  constructor(cylinderDiameter, cylinderHeight) {
-    this.diameter = cylinderDiameter;
-    this.height = cylinderHeight;
+class Pet {
+  constructor(name, color) {
+    this.name = name;
+    this.color = color;
   }
-
-  getVolume = function () {
-    let radius = this.diameter / 2;
-    return (Math.PI * radius * radius * this.height).toFixed(2);
+  run = function () {
+    alert(`${this.name} is running~`);
   };
 }
 
-/* let cylinder = new Cylinder(8, 10);
-console.log(`원기둥의 부피는 ${cylinder.getVolume()}입니다.`) */
+let pet1 = new Pet("뽀삐", "black");
+pet1.run();
 
-const button = document.querySelector("button");
-const result = document.querySelector("#result");
-
-button.addEventListener("click", function (event) {
-  event.preventDefault();
-  const diameter = document.querySelector("#cyl-diameter").value;
-  const height = document.querySelector("#cyl-height").value;
-
-  if (diameter === "" || height === "") {
-    result.innerText = `지름값과 높잇값을 입력하세요.`;
-  } else {
-    let cylinder = new Cylinder(parseInt(diameter), parseInt(height));
-    result.innerText = `원기둥의 부피는  ${cylinder.getVolume()}입니다.`;
+class Cat extends Pet {
+  constructor(name, color, breed) {
+    super(name, color);
+    this.breed = breed;
   }
-});
+  viewInfo = function () {
+    alert(`이름 : ${this.name} / 품종 : ${this.breed} / 색깔 : ${this.color}`);
+  };
+}
+
+const bori = new Cat("보리", "흰색", "코숏");
+bori.viewInfo();
+bori.runt();

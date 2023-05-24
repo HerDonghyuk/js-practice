@@ -5,8 +5,8 @@ class Pet {
   }
 
   run = function () {
-    alert(`${this.name} is running.`);    
-  }
+    alert(`${this.name} is running.`);
+  };
 }
 
 class Cat extends Pet {
@@ -23,3 +23,4 @@ class Cat extends Pet {
 // const cheez = new Pet("치즈", "yellow");
 const bori = new Cat("보리", "흰색", "코숏");
 bori.viewInfo();
+bori.runt();
