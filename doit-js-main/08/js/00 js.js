@@ -1,2 +1,8 @@
-new Date("2025-05-25");
-new Date(2025, 2, 25);
+function changeBg() {
+  const bgCount = 5;
+
+  let randomNumber = Math.floor(Math.random() * bgCount) + 1;
+  document.body.style.backgroundImage = `url(images/bg-${randomNumber}.jpg)`;
+}
+
+document.addEventListener("load", changeBg());
