@@ -1,29 +1,20 @@
-const email = document.querySelector("#userEmail");
-const button = document.querySelector("button");
+const origin = document.querySelector("#origin");
 const result = document.querySelector("#result");
 
-/* button.addEventListener("click", function () {
-  let username, domain;
+let numbers = [2, 4, 6, 8, 10];
 
-  if (email.value !== "") {
-    username = email.value.split("@")[0];
-    username = username.substring(0, 3);
-    domain = email.value.split("@")[1];
-    result.innerText = `${username}...@${domain}`;
-    email.value = "";
-  }
-});
-*/
+const tail = (arr) => (arr.length > 1 ? arr.slice(1) : arr);
 
-button.addEventListener("click", function () {
-  let username, domain, half;
+// 아래와 같이 선언할 수도 있습니다.
+// function tail(arr) {
+//   let resultArr;
+//   if (arr.length > 1 ) {
+//     resultArr = arr.slice(1);
+//   } else {
+//     resultArr = arr;
+//   }
+//   return resultArr;
+// }
 
-  if (email.value !== "") {
-    username = email.value.split("@")[0];
-    half = username.length / 2;
-    username = username.substring(0, half);
-    domain = email.value.split("@")[1];
-    result.innerText = `${username}...@${domain}`;
-    email.value = "";
-  }
-});
+origin.innerText = numbers;
+result.innerText = tail(numbers);
