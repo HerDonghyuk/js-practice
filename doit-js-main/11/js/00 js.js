@@ -1,55 +1,33 @@
-/* let hi = "hello";
+const result = document.querySelector("#result");
+const button = document.querySelector("button");
 
-for (let ch of hi) {
-  console.log(ch);
-}
+const luckyNumber = {
+  digitCount: 6,
+  maxNumber: 45,
+};
 
-let chArray = [...hi];
-console.log(chArray);
+button.addEventListener("click", () => {
+  let { digitCount, maxNumber } = luckyNumber;
+  let myNumber = new Set();
+  for (let i = 0; i < digitCount; i++) {
+    myNumber.add(Math.floor(Math.random() * maxNumber) + 1);
+  }
+  result.innerHTML = `${[...myNumber]}`;
+});
 
-let [ch1, ch2] = hi;
-console.log(ch1);
-console.log(ch2);
- */
+/* const result = document.querySelector('#result');
+const button = document.querySelector('button');
 
-/* let arr = [1, 2, 3, 4, 5]
-let it = arr[Symbol.iterator]()
-console.log(it)
+const luckyNumber = {
+  digitCount: 6, // 숫자 6개
+  maxNumber: 45, // 최대 숫자 45
+};
 
-console.log(it.next())
-console.log(it.next())
-console.log(it.next())
-console.log(it.next())
-console.log(it.next())
-console.log(it.next())
-console.log(it.next()) */
-
-function fnc() {
-  console.log("1");
-  console.log("2");
-  console.log("3");
-}
-
-fnc();
-
-function* gen() {
-  yield 1;
-  yield 2;
-  yield 3;
-}
-
-let g1 = gen();
-console.log(g1);
-console.log(g1);
-console.log(g1.next());
-console.log(g1.next());
-console.log(g1.next());
-console.log(g1.next());
-console.log(g1);
-
-let g2 = gen();
-for (let i of g2) console.log(i);
-
-let g3 = gen();
-g3.next();
-for (let i of g3) console.log(i);
+button.addEventListener("click", () => {
+  let { digitCount, maxNumber } = luckyNumber;
+  let myNumber = new Set(); // 숫자가 중복되지 않게 저장할 Set 생성
+  for (let i = 0; i < digitCount; i++) {
+    myNumber.add(Math.floor(Math.random() * maxNumber) + 1);
+  }
+  result.innerText = `${[...myNumber]}`;  // Set을 Array로 변환
+}); */
