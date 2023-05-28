@@ -1,23 +1,45 @@
-/* try {
-console.log("시작");
-add();
-console.log("실행 중");
-} catch(err) {
-  console.error(`오류 발생 - ${err}`);
-  console.error(`오류 발생 - ${err.name}`);
-  console.error(`오류 발생 - ${err.message}`);
-}
+/* const userNumber = document.querySelector("#user-number");
+const button = document.querySelector("button");
 
-console.log("끝");
- */
-
-let json = '{"grade": 3, "age" : 25}';
-
-try {
-  let user = JSON.parse(json);
-  if (!user.name) {
-    throw new Error("사용자 이름이 없습니다");
+button.addEventListener("click", () => {
+  let n = userNumber.value;
+  try {
+    if (n === "" || isNaN(n)) {
+      throw "숫자를 입력하세요.";
+    }
+    n = Number(n);  // n = parseInt(n);
+    if (n <= 10) {
+      document.querySelector("#result").innerText = n;
+    }
+    if (n > 10) {
+      throw "10보다 작은 수를 입력하세요.";
+    }    
+  } catch (err) {
+    alert(err);
+  } finally {
+    userNumber.value = "";
   }
-} catch (err) {
-  console.log(err);
-}
+}); */
+
+const userNumber = document.querySelector("#user-number");
+const button = document.querySelector("button");
+
+button.addEventListener("click", () => {
+  let n = userNumber.value;
+  try {
+    if (n === "" || isNaN(n)) {
+      throw "숫자를 입력하세요.";
+    }
+    n = Number(n); // n = parseInt(n);
+    if (n <= 10) {
+      document.querySelector("#result").innerText = n;
+    }
+    if (n > 10) {
+      throw "10보다 작은 수를 입력하세요.";
+    }
+  } catch (err) {
+    alert(err);
+  } finally {
+    userNumber.value = "";
+  }
+});
