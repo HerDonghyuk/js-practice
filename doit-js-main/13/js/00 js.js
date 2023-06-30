@@ -1,47 +1,48 @@
-/* const order = new Promise((resolve, reject) => {
-  let coffee = prompt("어떤 커피를 주문하시겠습니까?", "아메리카노");
-  if (coffee != null && coffee != "") {
-    document.querySelector(".start").innerText = `${coffee} 주문 접수`;
-    setTimeout(() => {
-      resolve(coffee);
-    }, 3000);
-  } else {
-    reject("커피를 주문하지 않았습니다.");
-  }
+const pizza = new Promise((resolve, _) => {
+  resolve("주문합니다");
 });
 
-function display(result) {
-  document.querySelector(".end").innerText = `${result} 준비 완료 🥤 `;
-  document.querySelector(".end").classList.add("active");
-  document.querySelector(".start").classList.add("done");
-}
-
-function showErr(err) {
-  document.querySelector(".start").innerText = err;
-}
-
-order.then(display).catch(showErr); */
-
-const order = new Promise((resolve, reject) => {
-  let coffee = prompt("커피 주문?", "아메리카노");
-  if (coffee != null && coffee != "") {
-    document.querySelector(".start").innerText = `${coffee} 주문 접수`;
+const step1 = (message) => {
+  console.log(message);
+  return new Promise((resolve, _) => {
     setTimeout(() => {
-      resolve(coffee);
+      resolve("도우완");
     }, 1500);
-  } else {
-    reject("ㄴㄴ주문");
-  }
-});
+  });
+};
 
-function display(result) {
-  document.querySelector(".start").innerText = `${coffee} 준비 완료`;
-  document.querySelector(".start").classList.add("active");
-  document.querySelector(".end").classList.add("done");
-}
+const step2 = (message) => {
+  console.log(message);
+  return new Promise((resolve, _) => {
+    setTimeout(() => {
+      resolve("토핑완");
+    }, 1500);
+  });
+};
 
-function showErr(err) {
-  console.log(err);
-}
+const step3 = (message) => {
+  console.log(message);
+  return new Promise((resolve, _) => {
+    setTimeout(() => {
+      resolve("굽기완");
+    }, 1500);
+  });
+};
 
-order.then(display).catch(showErr);
+/* pizza
+  .then(step1)
+  .then(step2)
+  .then(step3)
+  .then(console.log)
+  .then(() => {
+    console.log("가져가");
+  }); */
+
+pizza
+  .then((result) => step1(result))
+  .then((result) => step2(result))
+  .then((result) => step3(result))
+  .then((result) => console.log(result))
+  .then(() => {
+    console.log("가져가");
+  });
