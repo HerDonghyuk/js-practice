@@ -1,5 +1,4 @@
-const pizza = () => {
-  return new Promise((resolve, reject) => {
-    resolve("주문완");
-  });
-};
+async function displayHello() {
+  console.log("hello");
+}
+displayHello();
